@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:20:33 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/07 19:51:16 by flohrel          ###   ########.fr       */
+/*   Updated: 2020/12/21 20:55:08 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int			ft_atoi(const char *nptr)
 	nb = 0;
 	while (ft_isdigit(*nptr))
 	{
+		if (nb > ((INT_MAX / 10) - *nptr + '0'))
+			return (0);
 		nb = (nb * 10) + (*nptr - '0');
 		nptr++;
 	}

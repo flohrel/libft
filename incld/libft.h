@@ -6,20 +6,18 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/11 20:15:51 by flohrel          ###   ########.fr       */
+/*   Updated: 2020/12/21 20:47:34 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/* TO DELETE: TESTING PURPOSE ONLY */
-# include <stdio.h>
-
 # include <stddef.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define MAXSQRT	(((SIZE_MAX / 641u / 6700417u) >= 4294967295u) ? \
 						65535 : 4294967295)
