@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 00:06:00 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/14 22:21:34 by flohrel          ###   ########.fr       */
+/*   Updated: 2020/12/23 02:32:57 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char *s;
 
 	if (!dest || !src)
-		return (dest):
+		return (dest);
 	d = (char *)dest;
 	s = (char *)src;
 	while (n--)
