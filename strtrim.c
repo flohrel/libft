@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 19:03:51 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/14 19:28:56 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/05 11:18:12 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	is_charset(char c, const char *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	const char	*start;
 	const char	*end;

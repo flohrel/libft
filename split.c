@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 16:52:36 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/14 19:53:33 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/05 11:18:24 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	**sstr_alloc(void)
 	return (sstr);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	*sptr;
 	char	**sstr;
