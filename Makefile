@@ -2,24 +2,58 @@
 ## Variables ##
 ###############
 
-SNAME		=	libft.a
-DNAME		=	libft.so
+NAME		=	libft.a
 
-SRCDIR		=	src
-INCDIR		=	incld
-SDIR		=	build-static
-DDIR		=	build-shared
-BDIR		=	bonus
-
-SRC			:=	$(wildcard $(SRCDIR)/*.c)
-BSRC		:=	$(wildcard $(BDIR)/*.c)
-SOBJ		:=	$(SRC:$(SRCDIR)/%.c=$(SDIR)/%.o)
-DOBJ		:=	$(SRC:$(SRCDIR)/%.c=$(DDIR)/%.o)
+SRC			=	atoi.c \
+				bzero.c \
+				calloc.c \
+				isalnum.c \
+				isalpha.c \
+				isascii.c \
+				isdigit.c \
+				isprint.c \
+				itoa.c \
+				memccpy.c \
+				memchr.c \
+				memcmp.c \
+				memcpy.c \
+				memmove.c \
+				memset.c \
+				putcharfd.c \
+				putendlfd.c \
+				putnbrfd.c \
+				putstrfd.c \
+				split.c \
+				strchr.c \
+				strdup.c \
+				strjoin.c \
+				strlcat.c \
+				strlcpy.c \
+				strlen.c \
+				strmapi.c \
+				strncmp.c \
+				strnstr.c \
+				strrchr.c \
+				strtrim.c \
+				substr.c \
+				tolower.c \
+				toupper.c
+BSRC		=	lstadd_back_bonus.c \
+				lstadd_front_bonus.c \
+				lstclear_bonus.c \
+				lstdelone_bonus.c \
+				lstiter_bonus.c \
+				lstlast_bonus.c \
+				lstmap_bonus.c \
+				lstnew_bonus.c \
+				lstsize_bonus.c
+INCLD		=	libft.h
+OBJ			:=	$(SRC:%.c=%.o)
+BOBJ		:=	$(BSRC:%.c=%.o)
 
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
-INCFLAGS	=	-I./$(INCDIR)
-LDFLAGS		=	-shared
+INCFLAGS	=	-include $(INCLD)
 RM			=	/bin/rm -rf
 AR			=	ar
 ARFLAGS		=	rcs
@@ -29,35 +63,23 @@ ARFLAGS		=	rcs
 ## Rules ##
 ###########
 
-.PHONY:			all bonus clean fclean re so
+.PHONY:			all bonus clean fclean re
 
-all:			$(SNAME)
+all:			$(NAME)
 
-$(SDIR)/%.o:	$(SRCDIR)/%.c | $(SDIR)
+%.o:			%.c
 				$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
-$(DDIR)/%.o:	$(SRCDIR)/%.c | $(DDIR)
-				$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
-
-$(SNAME):		$(SOBJ)
+$(NAME):		$(OBJ)
 				$(AR) $(ARFLAGS) $@ $^
 
-$(DNAME):		$(DOBJ)
-				$(CC) $(LDFLAGS) $^ -o $@
-
-$(SDIR) $(DDIR):
-				mkdir $@
-
-bonus:			SRC += $(BSRC)
-bonus:			$(SNAME)
-
-so:				CFLAGS += -fPIC
-so:				$(DNAME)
+bonus:			
+				@make all OBJ="$(OBJ) $(BOBJ)"
 
 clean:
-				$(RM) $(SOBJ) $(DOBJ)
+				$(RM) $(BOBJ) $(OBJ)
 
 fclean:			clean
-				$(RM) $(SDIR) $(DDIR) $(SNAME) $(DNAME)
+				$(RM) $(NAME)
 
 re:				fclean all
