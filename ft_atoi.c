@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:20:33 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/05 11:16:44 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/05 12:27:08 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_isspace(char c)
 	return ((c == ' ') || !((c > 13) || (c < 9)));
 }
 
-static int	check_overflow(int nb, int nptr, int sign)
+static int	check_overflow(unsigned int nb, int nptr, int sign)
 {
 	unsigned int n;
 
