@@ -1,53 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   itoa.c                                             :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 22:58:12 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/14 18:48:43 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/09 13:35:43 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	g_len = 0;
-static int	g_idx = 0;
-
-static char	*ft_itoa2(long n, t_bool is_negative)
+static char	*ft_itoa2(long n, int len, int idx, t_bool is_negative)
 {
-	char	*str;
+	char		*str;
+	static int	l = 0;
 
-	g_len++;
 	if (n < 10)
 	{
-		str = malloc(sizeof(*str) * (g_len + 1));
+		str = malloc(sizeof(*str) * (len + 1));
 		if (!str)
 			return (str);
-		str[g_len] = '\0';
+		str[len] = '\0';
+		l = len;
 		if (is_negative)
-			str[g_idx++] = '-';
+			str[idx + l++] = '-';
 	}
 	else
-		str = ft_itoa2(n / 10, is_negative);
+		str = ft_itoa2(n / 10, len + 1, idx - 1, is_negative);
 	if (str)
-		str[g_idx++] = (n % 10) + '0';
+		str[idx + l] = (n % 10) + '0';
 	return (str);
 }
 
 char		*ft_itoa(int n)
 {
-	char	*str;
+	char		*str;
+	static int	len = 0;
+	static int	idx = 0;
 
 	if (n < 0)
-	{
-		g_len++;
-		str = ft_itoa2(-(long)n, TRUE);
-	}
+		str = ft_itoa2(-(long)n, len + 2, idx - 2, TRUE);
 	else
-		str = ft_itoa2(n, FALSE);
-	g_len = 0;
-	g_idx = 0;
+		str = ft_itoa2(n, len + 1, idx - 1, FALSE);
+	len = 0;
+	idx = 0;
 	return (str);
 }
