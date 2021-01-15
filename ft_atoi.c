@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:20:33 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/05 12:27:08 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/14 22:10:48 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	check_overflow(unsigned int nb, int nptr, int sign)
 	if (sign > 0)
 		n = (INT_MAX - nptr + '0') / 10;
 	else
-		n = (-INT_MIN - nptr + '0') / 10;
+		n = -(INT_MIN + nptr - '0') / 10;
 	if (nb > n)
 		return (1);
 	return (0);
