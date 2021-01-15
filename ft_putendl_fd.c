@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putendlfd.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 15:44:39 by flohrel           #+#    #+#             */
-/*   Updated: 2020/12/14 19:43:38 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/15 16:09:05 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+size_t	ft_putendl_fd(char *s, int fd)
 {
+	size_t	nbyte;
+
 	if (!s)
-		return ;
-	ft_putstr_fd(s, fd);
+		return (0);
+	nbyte = ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
+	return (nbyte + 1);
 }
