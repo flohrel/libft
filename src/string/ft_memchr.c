@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/11/05 22:53:02 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:56:25 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/string.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char *str;
+	unsigned char ch;
 
-#endif
+	str = (unsigned char *)s;
+	ch = (unsigned char)c;
+	while (n--)
+	{
+		if (*str == ch)
+			return (str);
+		++str;
+	}
+	return (NULL);
+}

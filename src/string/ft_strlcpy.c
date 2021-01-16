@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/11/06 02:12:43 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:58:30 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/string.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	const char	*s;
+	int			n;
 
-#endif
+	if (!dst || !src)
+		return (0);
+	n = size;
+	s = src;
+	if (n != 0)
+	{
+		while (--n)
+			if ((*dst++ = *s++) == '\0')
+				break ;
+	}
+	if (!n)
+	{
+		if (size != 0)
+			*dst = '\0';
+		while (*s++)
+			;
+	}
+	return (s - src - 1);
+}

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/12/03 21:13:14 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:58:45 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/string.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+char	*ft_strdup(const char *s)
+{
+	char	*d;
+	char	*dup;
+	size_t	len;
 
-#endif
+	len = ft_strlen(s);
+	dup = malloc(sizeof(*dup) * (len + 1));
+	if (!dup)
+		return (dup);
+	d = dup;
+	while (len--)
+		*d++ = *s++;
+	*d = '\0';
+	return (dup);
+}

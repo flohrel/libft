@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/11/06 03:51:28 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:57:38 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/string.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	lsize;
 
-#endif
+	if (!(lsize = ft_strlen(little)))
+		return ((char *)big);
+	if (len && (len -= (lsize - 1)) > 0)
+	{
+		while (len-- && *big)
+		{
+			if (!ft_strncmp(big, little, lsize))
+				return ((char *)big);
+			big++;
+		}
+	}
+	return (NULL);
+}

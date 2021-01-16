@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/12/04 14:36:40 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:57:09 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/string.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	size;
+	char	*str;
 
-#endif
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s);
+	if (size < start)
+		size = 0;
+	else
+		size -= start;
+	if (size < len)
+		len = size;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (str);
+	ft_strlcpy(str, &s[start], len + 1);
+	return (str);
+}

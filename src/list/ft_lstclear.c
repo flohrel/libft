@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 12:22:47 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:46:32 by flohrel          ###   ########.fr       */
+/*   Created: 2020/12/11 18:51:19 by flohrel           #+#    #+#             */
+/*   Updated: 2021/01/16 15:55:05 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft/list.h"
 
-# include "libft/type.h"
-# include "libft/memory.h"
-# include "libft/list.h"
-# include "libft/string.h"
-# include "libft/ctype.h"
-# include "libft/io.h"
-# include "libft/conv.h"
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*lptr;
+	t_list	*next;
 
-#endif
+	if (*lst && del)
+	{
+		lptr = *lst;
+		while (lptr)
+		{
+			next = lptr->next;
+			ft_lstdelone(lptr, del);
+			lptr = next;
+		}
+		*lst = NULL;
+	}
+}
