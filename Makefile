@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/01/16 16:14:18 by flohrel          ###   ########.fr        #
+#    Updated: 2021/01/16 18:45:01 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ VPATH		=	src/conv \
 				src/io \
 				src/list \
 				src/memory \
-				src/string
+				src/string \
+				src/io/gnl
 INCLDIR		=	incld
 OBJDIR		=	obj
 
@@ -74,7 +75,10 @@ STR			=	ft_memccpy.c \
 				ft_substr.c \
 				ft_bzero.c
 
-SRC			=	$(CONV) $(CTYPE) $(IO) $(LIST) $(MEM) $(STR)
+GNL			=	get_next_line.c \
+				gnl_utils.c
+
+SRC			=	$(CONV) $(CTYPE) $(IO) $(LIST) $(MEM) $(STR) $(GNL)
 OBJ			=	$(SRC:%.c=$(OBJDIR)/%.o)
 
 CC			=	gcc
