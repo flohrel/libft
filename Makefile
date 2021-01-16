@@ -4,6 +4,10 @@
 
 NAME		=	libft.a
 
+VPATH		=	src
+INCLDIR		=	incld
+OBJDIR		=	obj
+
 SRC			=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -37,8 +41,8 @@ SRC			=	ft_atoi.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \
-				ft_toupper.c
-BSRC		=	ft_lstadd_back.c \
+				ft_toupper.c \
+				ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
@@ -47,13 +51,11 @@ BSRC		=	ft_lstadd_back.c \
 				ft_lstmap.c \
 				ft_lstnew.c \
 				ft_lstsize.c
-INCLD		=	libft.h
-OBJ			:=	$(SRC:%.c=%.o)
-BOBJ		:=	$(BSRC:%.c=%.o)
+OBJ			:=	$(SRC:%.c=$(OBJDIR)/%.o)
 
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
-INCFLAGS	=	-include $(INCLD)
+INCFLAGS	=	-I./$(INCLDIR)
 RM			=	/bin/rm -rf
 AR			=	ar
 ARFLAGS		=	rcs
@@ -63,23 +65,26 @@ ARFLAGS		=	rcs
 ## Rules ##
 ###########
 
-.PHONY:			all bonus clean fclean re
+.PHONY:			all clean fclean re
 
 all:			$(NAME)
 
-%.o:			%.c
+$(OBJDIR)/%.o:	%.c | $(OBJDIR)
 				$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJ)
 				$(AR) $(ARFLAGS) $@ $^
 
-bonus:			
-				@make all OBJ="$(OBJ) $(BOBJ)"
+$(OBJDIR):
+				mkdir $(OBJDIR)
+
+debug:			CFLAGS += -fsanitize=address -g3
+debug:			re
 
 clean:
-				$(RM) $(BOBJ) $(OBJ)
+				$(RM) $(OBJ)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) $(OBJDIR)
 
 re:				fclean all
