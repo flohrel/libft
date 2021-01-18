@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/01/16 18:45:01 by flohrel          ###   ########.fr        #
+#    Updated: 2021/01/18 15:29:44 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ INCLDIR		=	incld
 OBJDIR		=	obj
 
 CONV		=	ft_atoi.c \
-				ft_itoa.c
+				ft_itoa.c \
+				ft_ltoa.c \
+				ft_ltoa_base.c
 
 CTYPE		=	ft_isalnum.c \
 				ft_isalpha.c \

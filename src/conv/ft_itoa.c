@@ -6,13 +6,13 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 22:58:12 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 15:55:20 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/01/18 15:38:15 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/conv.h"
 
-static char	*ft_itoa2(unsigned long n, size_t len, size_t idx, t_bool is_negative)
+static char	*ft_itoa2(unsigned int n, size_t len, size_t idx, t_bool is_negative)
 {
 	char			*str;
 	static size_t	i = 0;
@@ -41,7 +41,7 @@ char		*ft_itoa(int n)
 	static size_t	idx = 0;
 
 	if (n < 0)
-		str = ft_itoa2(-(unsigned long)n, len + 2, idx - 2, TRUE);
+		str = ft_itoa2(-n, len + 2, idx - 2, TRUE);
 	else
 		str = ft_itoa2(n, len + 1, idx - 1, FALSE);
 	len = 0;
