@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/01/18 15:29:44 by flohrel          ###   ########.fr        #
+#    Updated: 2021/01/19 14:42:34 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,15 @@ OBJDIR		=	obj
 CONV		=	ft_atoi.c \
 				ft_itoa.c \
 				ft_ltoa.c \
-				ft_ltoa_base.c
+				ft_ltoa_base.c \
+				ft_ultoa_base.c
 
 CTYPE		=	ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
+				ft_isspace.c \
 				ft_tolower.c \
 				ft_toupper.c
 
