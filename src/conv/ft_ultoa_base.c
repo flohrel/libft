@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 14:50:37 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/18 17:03:59 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/02/02 20:21:24 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static size_t	str_alloc(unsigned long n, char **str, size_t base_len)
 {
 	size_t			str_len;
 
-	str_len = 0;
+	str_len = 1;
 	while (n)
 	{
 		str_len++;
