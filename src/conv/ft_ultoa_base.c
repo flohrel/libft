@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 14:50:37 by flohrel           #+#    #+#             */
-/*   Updated: 2021/02/08 13:05:44 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/02/08 18:49:24 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static size_t	str_alloc(unsigned long n, char **str, size_t base_len)
 	return (str_len);
 }
 
-static void		base_convert(unsigned long n, char *str, char *base, size_t base_len)
+static void		base_convert(unsigned long n, char *str, char *base,
+		size_t base_len)
 {
 	if (n >= base_len)
 		base_convert(n / base_len, str - 1, base, base_len);

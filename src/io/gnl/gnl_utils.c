@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   gnl_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 10:18:57 by flohrel           #+#    #+#             */
-/*   Updated: 2021/01/16 18:39:07 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/02/08 18:50:07 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		set_line(t_queue *file_q, char **line)
 	file_q = init_file_queue(file_q);
 	return (0);
 }
-
 
 t_queue	*init_file_queue(t_queue *file_q)
 {

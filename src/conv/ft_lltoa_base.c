@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_lltoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 14:50:37 by flohrel           #+#    #+#             */
-/*   Updated: 2021/02/08 18:49:41 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/02/08 18:46:53 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		ft_isvalid(char *base)
 	return (1);
 }
 
-static size_t	str_alloc(long n, char **str, size_t base_len)
+static size_t	str_alloc(long long n, char **str, size_t base_len)
 {
 	unsigned long	tmp;
 	size_t			str_len;
@@ -57,7 +57,7 @@ static size_t	str_alloc(long n, char **str, size_t base_len)
 	return (str_len);
 }
 
-static void		base_convert(unsigned long n, char *str, char *base,
+static void		base_convert(unsigned long long n, char *str, char *base,
 		size_t base_len)
 {
 	if (n >= base_len)
@@ -65,7 +65,7 @@ static void		base_convert(unsigned long n, char *str, char *base,
 	*str = base[n % base_len];
 }
 
-char			*ft_ltoa_base(long n, char *base)
+char			*ft_lltoa_base(long long n, char *base)
 {
 	size_t			str_len;
 	size_t			base_len;

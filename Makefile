@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/01/20 11:19:52 by flohrel          ###   ########.fr        #
+#    Updated: 2021/02/11 01:20:43 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ OBJDIR		=	obj
 CONV		=	ft_atoi.c \
 				ft_itoa.c \
 				ft_ltoa.c \
+				ft_lltoa.c \
 				ft_ltoa_base.c \
+				ft_lltoa_base.c \
 				ft_ultoa_base.c
 
 CTYPE		=	ft_isalnum.c \
@@ -44,7 +46,9 @@ CTYPE		=	ft_isalnum.c \
 IO			=	ft_putchar_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				ft_putstr_fd.c
+				ft_putstr_fd.c \
+				ft_putwc_fd.c \
+				ft_putwcs_fd.c
 
 LIST		=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
@@ -77,7 +81,8 @@ STR			=	ft_memccpy.c \
 				ft_strrchr.c \
 				ft_strtrim.c \
 				ft_substr.c \
-				ft_bzero.c
+				ft_bzero.c \
+				ft_wcslen.c
 
 GNL			=	get_next_line.c \
 				gnl_utils.c
