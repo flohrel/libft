@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/02/11 01:20:43 by flohrel          ###   ########.fr        #
+#    Updated: 2021/02/16 20:23:03 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ CONV		=	ft_atoi.c \
 				ft_lltoa.c \
 				ft_ltoa_base.c \
 				ft_lltoa_base.c \
-				ft_ultoa_base.c
+				ft_ultoa_base.c \
+				ft_wchar_to_bytes.c
 
 CTYPE		=	ft_isalnum.c \
 				ft_isalpha.c \
