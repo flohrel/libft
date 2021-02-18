@@ -6,7 +6,7 @@
 /*   By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 15:32:40 by flohrel           #+#    #+#             */
-/*   Updated: 2021/02/16 20:20:48 by flohrel          ###   ########.fr       */
+/*   Updated: 2021/02/19 00:52:45 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ char			*ft_lltoa(long long n);
 char			*ft_ltoa_base(long n, char *base);
 char			*ft_lltoa_base(long long n, char *base);
 char			*ft_ultoa_base(unsigned long n, char *base);
-unsigned char	*ft_wchar_to_bytes(wchar_t c);
 
 #endif
