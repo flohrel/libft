@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/02/19 10:16:16 by flohrel          ###   ########.fr        #
+#    Updated: 2021/02/23 03:20:05 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ CONV		=	ft_atoi.c \
 
 CTYPE		=	ft_isalnum.c \
 				ft_isalpha.c \
+				ft_isupper.c \
+				ft_islower.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
