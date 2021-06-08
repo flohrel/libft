@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   lst_alloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtogbe <mtogbe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 17:34:47 by mtogbe            #+#    #+#             */
-/*   Updated: 2021/05/29 09:08:14 by flohrel          ###   ########.fr       */
+/*   Created: 2021/05/14 17:30:48 by mtogbe            #+#    #+#             */
+/*   Updated: 2021/05/30 18:32:15 by flohrel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include "libft/memory.h"
 
-# include <stdlib.h>
-# include "type.h"
-# include "string.h"
-# include "list.h"
+void	*garbage_collector(size_t nmemb, size_t size, t_list **lst)
+{
+	void			*ptr;
+	t_list			*new;
 
-void			*ft_calloc(size_t nmemb, size_t size);
-void			*garbage_collector(size_t nmemb, size_t size, t_list **lst);
-void			free_ptr(void *ptr, t_list **head);
-void			free_ptr_lst(t_list **lst);
-
-#endif
+	if (!lst)
+		return (NULL);
+	ptr = ft_calloc(nmemb, size);
+	if (!ptr)
+		return (NULL);
+	new = ft_lstnew(ptr);
+	if (!new)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	ft_lstadd_front(lst, new);
+	return (ptr);
+}

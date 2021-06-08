@@ -6,7 +6,7 @@
 #    By: flohrel <flohrel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/16 16:04:42 by flohrel           #+#    #+#              #
-#    Updated: 2021/02/23 03:34:34 by flohrel          ###   ########.fr        #
+#    Updated: 2021/06/08 14:06:07 by flohrel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME		=	libft.a
 
 VPATH		=	src/conv \
 				src/ctype \
+				src/dlist \
 				src/io \
 				src/list \
 				src/memory \
@@ -44,9 +45,21 @@ CTYPE		=	ft_isalnum.c \
 				ft_isprint.c \
 				ft_isspace.c \
 				ft_tolower.c \
-				ft_toupper.c
+				ft_toupper.c \
+				is_charset.c
 
-IO			=	ft_putchar_fd.c \
+DLIST		=	ft_dlstadd_back.c \
+				ft_dlstadd_front.c \
+				ft_dlstclear.c \
+				ft_dlstdelone.c \
+				ft_dlstiter.c \
+				ft_dlstlast.c \
+				ft_dlstmap.c \
+				ft_dlstnew.c \
+				ft_dlstsize.c
+
+IO			=	ft_putchar.c \
+				ft_putchar_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 				ft_putstr_fd.c
@@ -61,7 +74,9 @@ LIST		=	ft_lstadd_back.c \
 				ft_lstnew.c \
 				ft_lstsize.c
 
-MEM			=	ft_calloc.c
+MEM			=	ft_calloc.c \
+				garb_coll.c \
+				free.c
 
 STR			=	ft_memccpy.c \
 				ft_memchr.c \
@@ -88,7 +103,14 @@ STR			=	ft_memccpy.c \
 GNL			=	get_next_line.c \
 				gnl_utils.c
 
-SRC			=	$(CONV) $(CTYPE) $(IO) $(LIST) $(MEM) $(STR) $(GNL)
+SRC			=	$(CONV) \
+				$(CTYPE) \
+				$(DLIST) \
+				$(IO) \
+				$(LIST) \
+				$(MEM) \
+				$(STR) \
+				$(GNL)
 OBJ			=	$(SRC:%.c=$(OBJDIR)/%.o)
 
 CC			=	gcc
